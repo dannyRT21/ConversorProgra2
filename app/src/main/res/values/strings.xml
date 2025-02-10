@@ -1,19 +1,58 @@
 <resources>
-    <string name="app_name">ConversorProgra2</string>
+    <!-- Arrays para monedas -->
     <string-array name="monedas">
-
         <item>Dolar</item>
         <item>Euro</item>
-        <item>Quetzalez</item>
-        <item>Lempiras</item>
-        <item>Cordobas</item>
-        <item>Colon CR</item>
-        <item>Colon SV</item>
-        <item>Yenes</item>
-        <item>Libras</item>
-        <item>Rupias</item>
+        <item>Quetzal</item>
+        <item>Lempira</item>
+        <item>Córdoba</item>
+        <item>Colón CR</item>
+        <item>Colón SV</item>
+        <item>Yen</item>
+        <item>Libra</item>
+        <item>Rupia</item>
         <item>Peso MX</item>
+    </string-array>
+
+    <!-- Arrays para longitud -->
+    <string-array name="longitud">
+       0 <item>Metros</item>
+        1<item>Kilómetros</item>
+        2<item>Millas</item>
+        3<item>Pies</item>
+        4<item>Centimetros</item>
+        5<item>Milimetros</item>
+        6<item>Yarda</item>
+        7<item>Pulgadas</item>
+        8<item>Hectarea</item>
+        9<item>Nanometro</item>
 
 
+    </string-array>
+
+    <!-- Arrays para tiempo -->
+    <string-array name="tiempo">
+        <item>Segundos</item>
+        <item>Minutos</item>
+        <item>Horas</item>
+        <item>Días</item>
+    </string-array>
+
+    <!-- Arrays para almacenamiento -->
+    <string-array name="almacenamiento">
+        <item>Bytes</item>
+        <item>Kilobytes</item>
+        <item>Megabytes</item>
+        <item>Gigabytes</item>
+        <item>Terabytes</item>
+    </string-array>
+
+    <!-- Arrays para transferencia de datos -->
+    <string-array name="transferencia_datos">
+        <item>Bits</item>
+        <item>Kilobits</item>
+        <item>Megabits</item>
+        <item>Gigabits</item>
+        <item>Terabits</item>
     </string-array>
 </resources>

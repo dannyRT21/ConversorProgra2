@@ -104,6 +104,11 @@
                     android:id="@+id/tabTransferenciadedatos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
+                <RelativeLayout
+                    android:id="@+id/Masa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
             </FrameLayout>
         </LinearLayout>
     </TabHost>
