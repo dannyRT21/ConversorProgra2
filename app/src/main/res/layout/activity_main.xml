@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <!-- TabHost para las pestañas de conversión -->
     <TabHost
         android:id="@+id/tbhConversor"
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- Pestañas -->
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
@@ -29,14 +27,12 @@
                 android:background="@color/material_dynamic_neutral99"
                 android:tabStripEnabled="false" />
 
-            <!-- Contenido de las pestañas -->
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp">
 
-                <!-- Pestaña de Monedas -->
                 <RelativeLayout
                     android:id="@+id/tabMonedas"
                     android:layout_width="match_parent"
@@ -84,8 +80,6 @@
                         android:background="@color/white" />
                 </RelativeLayout>
 
-
-                <!-- Pestaña de Longitud -->
                 <RelativeLayout
                     android:id="@+id/tabLongitud"
                     android:layout_width="match_parent"
@@ -133,9 +127,6 @@
                         android:background="@color/white" />
                 </RelativeLayout>
 
-
-
-
                 <RelativeLayout
                     android:id="@+id/tabTiempo"
                     android:layout_width="match_parent"
@@ -159,8 +150,6 @@
         </LinearLayout>
     </TabHost>
 
-    <!-- Campo de entrada para la cantidad -->
-
     <EditText
         android:id="@+id/txtCantidad"
         android:hint="Ingrese la cantidad"
@@ -176,7 +165,6 @@
         android:textSize="16sp"
         android:inputType="numberDecimal" />
 
-    <!-- Botón de calcular -->
     <Button
         android:id="@+id/btnCalcular"
         android:text="CALCULAR"
@@ -192,7 +180,6 @@
         android:padding="12dp"
         android:fontFamily="sans-serif-medium" />
 
-    <!-- Texto para mostrar la respuesta -->
     <TextView
         android:id="@+id/lblRespuesta"
         android:text="Respuesta: ?"
