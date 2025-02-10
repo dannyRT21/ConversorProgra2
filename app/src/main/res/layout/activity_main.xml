@@ -85,10 +85,56 @@
                 </RelativeLayout>
 
                 <!-- Otras pestañas (Longitud, Tiempo, Almacenamiento, Transferencia de Datos) -->
+                <!-- Pestaña de Longitud -->
                 <RelativeLayout
                     android:id="@+id/tabLongitud"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/lblDeLongitud"
+                        android:text="DE:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnDeLongitud"
+                        android:entries="@array/longitud"
+                        android:layout_below="@id/lblDeLongitud"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/cardview_light_background" />
+
+                    <TextView
+                        android:id="@+id/lblALongitud"
+                        android:text="A:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/spnDeLongitud"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnALongitud"
+                        android:entries="@array/longitud"
+                        android:layout_below="@id/lblALongitud"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
+                </RelativeLayout>
+
+
+
 
                 <RelativeLayout
                     android:id="@+id/tabTiempo"

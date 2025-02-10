@@ -36,6 +36,13 @@
         <item>Minutos</item>
         <item>Horas</item>
         <item>Días</item>
+        <item>años</item>
+        <item>Siglos</item>
+        <item>Decadas</item>
+        <item>Milenios</item>
+        <item>quinquenio</item>
+        <item>semanas</item>
+
     </string-array>
 
     <!-- Arrays para almacenamiento -->
@@ -45,6 +52,11 @@
         <item>Megabytes</item>
         <item>Gigabytes</item>
         <item>Terabytes</item>
+        <item>Petabytes</item>
+        <item>Exabytes</item>
+        <item>Zettabytes</item>
+        <item>Yottabytes</item>
+        <item>Brontobytes</item>
     </string-array>
 
     <!-- Arrays para transferencia de datos -->
@@ -54,5 +66,10 @@
         <item>Megabits</item>
         <item>Gigabits</item>
         <item>Terabits</item>
+        <item>Petabits</item>
+        <item>Exabits</item>
+        <item>Zettabits</item>
+        <item>Yottabits</item>
+        <item>Brontobits</item>
     </string-array>
 </resources>
