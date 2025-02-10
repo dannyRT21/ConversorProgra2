@@ -14,6 +14,8 @@
         <item>Peso MX</item>
     </string-array>
 
+
+
     <!-- Arrays para longitud -->
     <string-array name="longitud">
        0 <item>Metros</item>
