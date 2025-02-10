@@ -9,5 +9,11 @@
         <item>Cordobas</item>
         <item>Colon CR</item>
         <item>Colon SV</item>
+        <item>Yenes</item>
+        <item>Libras</item>
+        <item>Rupias</item>
+        <item>Peso MX</item>
+
+
     </string-array>
 </resources>

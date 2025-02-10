@@ -35,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tempVal = findViewById(R.id.txtCantidad);
+                String cantidadTexto = tempVal.getText().toString();
+
+                // Validación para verificar si el campo está vacío
+                if (cantidadTexto.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "INGRESA UN VALOR", Toast.LENGTH_SHORT).show();
+                    return; // Detener la ejecución si el campo está vacío
+                }
+
                 int opcion = tbh.getCurrentTab();
 
                 spn = findViewById(R.id.spnDeMonedas);
@@ -49,12 +58,15 @@ public class MainActivity extends AppCompatActivity {
                     return; // Detener la ejecución si las unidades son iguales
                 }
 
-                tempVal = findViewById(R.id.txtCantidad);
-                double cantidad = Double.parseDouble(tempVal.getText().toString());
+                double cantidad = Double.parseDouble(cantidadTexto);
 
                 tempVal = findViewById(R.id.lblRespuesta);
                 double respuesta = objConversores.convertir(opcion, de, a, cantidad);
-                tempVal.setText("Respuesta: "+ respuesta);
+
+                // Formatear la respuesta con dos decimales y el símbolo de la moneda
+                String[] simbolosMonedas = {"$", "€", "Q", "L", "C$", "₡", "₡", "¥", "£", "₹", "₱"};
+                String simbolo = simbolosMonedas[a];
+                tempVal.setText(String.format("Respuesta: %s %.2f", simbolo, respuesta));
             }
         });
     }
@@ -62,14 +74,15 @@ public class MainActivity extends AppCompatActivity {
 
 class conversores {
     double[][] valores = {
-            {1, 0.98, 7.73, 25.45, 36.78, 508.87, 8.74}, //monedas
-            {}, //Longitud
-            {}, //tiempo
-            {}, //Almacenamiento
-            {}, //Transferenciadedatos
+            // Dólar, Euro, Quetzal, Lempira, Córdoba, Colón CR, Colón SV, Yen, Libra, Rupia, Peso MX
+            {1, 0.98, 7.73, 25.45, 36.78, 508.87, 8.74, 0.0087, 0.0073, 0.0054, 0.049}, // Monedas
+            {}, // Longitud
+            {}, // Tiempo
+            {}, // Almacenamiento
+            {}, // Transferencia de datos
     };
 
     public double convertir(int opcion, int de, int a, double cantidad) {
-        return valores[opcion][a] / valores[opcion][de] * cantidad;
+        return (valores[opcion][a] / valores[opcion][de]) * cantidad;
     }
 }

@@ -5,120 +5,152 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
+    <!-- TabHost para las pestañas de conversión -->
     <TabHost
         android:id="@+id/tbhConversor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- Pestañas -->
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@color/material_dynamic_neutral99"
+                android:tabStripEnabled="false" />
 
+            <!-- Contenido de las pestañas -->
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="16dp">
 
+                <!-- Pestaña de Monedas -->
                 <RelativeLayout
                     android:id="@+id/tabMonedas"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/lblDeMonedas"
-                        android:text="DE: "
-                        android:layout_marginTop="40dp"
-                        android:layout_marginLeft="20dp"
+                        android:text="DE:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
+
                     <Spinner
-                        android:entries="@array/monedas"
                         android:id="@+id/spnDeMonedas"
+                        android:entries="@array/monedas"
                         android:layout_below="@id/lblDeMonedas"
-                        android:layout_marginLeft="80dp"
-                        android:layout_marginTop="-20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/cardview_light_background" />
+
                     <TextView
                         android:id="@+id/lblAMonedas"
-                        android:text="A: "
+                        android:text="A:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
                         android:layout_below="@id/spnDeMonedas"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
+
                     <Spinner
-                        android:entries="@array/monedas"
                         android:id="@+id/spnAMonedas"
-                        android:layout_below="@id/spnDeMonedas"
-                        android:layout_marginLeft="80dp"
-                        android:layout_marginTop="40dp"
+                        android:entries="@array/monedas"
+                        android:layout_below="@id/lblAMonedas"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
                 </RelativeLayout>
 
+                <!-- Otras pestañas (Longitud, Tiempo, Almacenamiento, Transferencia de Datos) -->
                 <RelativeLayout
                     android:id="@+id/tabLongitud"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                </RelativeLayout>
+                    android:layout_height="match_parent" />
 
                 <RelativeLayout
                     android:id="@+id/tabTiempo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent" />
 
-                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/tabAlmacenamiento"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent" />
 
-                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/tabTransferenciadedatos"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                </RelativeLayout>
+                    android:layout_height="match_parent" />
             </FrameLayout>
         </LinearLayout>
     </TabHost>
 
+    <!-- Campo de entrada para la cantidad -->
+
     <EditText
-        android:hint="Cantidad"
-        android:layout_below="@+id/tbhConversor"
-        android:layout_marginTop="40dp"
         android:id="@+id/txtCantidad"
+        android:hint="Ingrese la cantidad"
+        android:layout_below="@id/tbhConversor"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:inputType="numberDecimal" />
+
+    <!-- Botón de calcular -->
     <Button
         android:id="@+id/btnCalcular"
-        android:layout_below="@+id/txtCantidad"
-        android:layout_marginTop="40dp"
         android:text="CALCULAR"
+        android:layout_below="@id/txtCantidad"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Texto para mostrar la respuesta -->
     <TextView
         android:id="@+id/lblRespuesta"
-        android:layout_below="@+id/btnCalcular"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"
         android:text="Respuesta: ?"
+        android:layout_below="@id/btnCalcular"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium" />
 </RelativeLayout>
