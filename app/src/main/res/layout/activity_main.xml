@@ -84,7 +84,7 @@
                         android:background="@color/white" />
                 </RelativeLayout>
 
-                <!-- Otras pestañas (Longitud, Tiempo, Almacenamiento, Transferencia de Datos) -->
+
                 <!-- Pestaña de Longitud -->
                 <RelativeLayout
                     android:id="@+id/tabLongitud"

@@ -44,29 +44,47 @@ public class MainActivity extends AppCompatActivity {
                     return; // Detener la ejecución si el campo está vacío
                 }
 
-                int opcion = tbh.getCurrentTab();
-
-                spn = findViewById(R.id.spnDeMonedas);
-                int de = spn.getSelectedItemPosition();
-
-                spn = findViewById(R.id.spnAMonedas);
-                int a = spn.getSelectedItemPosition();
-
-                // Validación para verificar si las unidades son iguales
-                if (de == a) {
-                    Toast.makeText(MainActivity.this, "No se pueden convertir dos monedas iguales", Toast.LENGTH_SHORT).show();
-                    return; // Detener la ejecución si las unidades son iguales
-                }
-
+                int opcion = tbh.getCurrentTab(); // Obtener la pestaña actual
                 double cantidad = Double.parseDouble(cantidadTexto);
 
-                tempVal = findViewById(R.id.lblRespuesta);
-                double respuesta = objConversores.convertir(opcion, de, a, cantidad);
+                double respuesta = 0;
+                String unidad = "";
 
-                // Formatear la respuesta con dos decimales y el símbolo de la moneda
-                String[] simbolosMonedas = {"$", "€", "Q", "L", "C$", "₡", "₡", "¥", "£", "₹", "₱"};
-                String simbolo = simbolosMonedas[a];
-                tempVal.setText(String.format("Respuesta: %s %.2f", simbolo, respuesta));
+                switch (opcion) {
+                    case 0: // Monedas
+                        int deMonedas = ((Spinner) findViewById(R.id.spnDeMonedas)).getSelectedItemPosition();
+                        int aMonedas = ((Spinner) findViewById(R.id.spnAMonedas)).getSelectedItemPosition();
+
+                        // Validación para evitar conversiones de la misma unidad
+                        if (deMonedas == aMonedas) {
+                            Toast.makeText(MainActivity.this, "No se pueden convertir dos monedas iguales", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        respuesta = objConversores.convertir(opcion, deMonedas, aMonedas, cantidad);
+                        unidad = ((Spinner) findViewById(R.id.spnAMonedas)).getSelectedItem().toString();
+                        break;
+
+                    case 1: // Longitud
+                        int deLongitud = ((Spinner) findViewById(R.id.spnDeLongitud)).getSelectedItemPosition();
+                        int aLongitud = ((Spinner) findViewById(R.id.spnALongitud)).getSelectedItemPosition();
+
+                        // Validación para evitar conversiones de la misma unidad
+                        if (deLongitud == aLongitud) {
+                            Toast.makeText(MainActivity.this, "No se pueden convertir dos unidades de longitud iguales", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        respuesta = objConversores.convertir(opcion, deLongitud, aLongitud, cantidad);
+                        unidad = ((Spinner) findViewById(R.id.spnALongitud)).getSelectedItem().toString();
+                        break;
+
+                    // Repite para Tiempo, Almacenamiento y Transferencia de Datos
+                }
+
+                // Mostrar la respuesta
+                tempVal = findViewById(R.id.lblRespuesta);
+                tempVal.setText(String.format("Respuesta: %.2f %s", respuesta, unidad));
             }
         });
     }
@@ -74,9 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
 class conversores {
     double[][] valores = {
-            // Dólar, Euro, Quetzal, Lempira, Córdoba, Colón CR, Colón SV, Yen, Libra, Rupia, Peso MX
+            // Monedas
             {1, 0.98, 7.73, 25.45, 36.78, 508.87, 8.74, 0.0087, 0.0073, 0.0054, 0.049}, // Monedas
-            {}, // Longitud
+            // Longitud (metros, kilómetros, millas, pies, centímetros, milímetros, yardas, pulgadas, hectáreas, nanómetros)
+            {1, 0.001, 0.000621371, 3.28084, 100, 1000, 1.09361, 39.3701, 0.0001, 1e9}, // Longitud
             {}, // Tiempo
             {}, // Almacenamiento
             {}, // Transferencia de datos
