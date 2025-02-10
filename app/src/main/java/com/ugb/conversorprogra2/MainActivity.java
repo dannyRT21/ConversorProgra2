@@ -3,18 +3,12 @@ package com.ugb.conversorprogra2;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     TabHost tbh;
@@ -22,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tempVal;
     Spinner spn;
     conversores objConversores = new conversores();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tbh.addTab(tbh.newTabSpec("Longitud").setContent(R.id.tabLongitud).setIndicator("LONGITUD", null));
         tbh.addTab(tbh.newTabSpec("Tiempo").setContent(R.id.tabTiempo).setIndicator("TIEMPO", null));
         tbh.addTab(tbh.newTabSpec("Almacenamiento").setContent(R.id.tabAlmacenamiento).setIndicator("ALMACENAMIENTO", null));
-        tbh.addTab(tbh.newTabSpec("Transferenciadedatos").setContent(R.id.tabAlmacenamiento).setIndicator("TRANSFERENCIADEDATOS", null));
+        tbh.addTab(tbh.newTabSpec("Transferenciadedatos").setContent(R.id.tabAlmacenamiento).setIndicator("TRANSFERENCIA DE DATOS", null));
 
         btn = findViewById(R.id.btnCalcular);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
                 spn = findViewById(R.id.spnAMonedas);
                 int a = spn.getSelectedItemPosition();
 
+                // Validación para verificar si las unidades son iguales
+                if (de == a) {
+                    Toast.makeText(MainActivity.this, "No se pueden convertir dos monedas iguales", Toast.LENGTH_SHORT).show();
+                    return; // Detener la ejecución si las unidades son iguales
+                }
+
                 tempVal = findViewById(R.id.txtCantidad);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
@@ -58,15 +59,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-class conversores{
-    double[][] valores= {
-            {1,0.98, 7.73, 25.45, 36.78, 508.87, 8.74},//monedas
-            {},//Longitud
-            {},//tiempo
-            {},//Almacenamiento
-            {},//Transferenciadedatos
+
+class conversores {
+    double[][] valores = {
+            {1, 0.98, 7.73, 25.45, 36.78, 508.87, 8.74}, //monedas
+            {}, //Longitud
+            {}, //tiempo
+            {}, //Almacenamiento
+            {}, //Transferenciadedatos
     };
-    public double convertir(int opcion, int de, int a, double cantidad){
+
+    public double convertir(int opcion, int de, int a, double cantidad) {
         return valores[opcion][a] / valores[opcion][de] * cantidad;
     }
 }
