@@ -139,9 +139,9 @@ class conversores {
             // Tiempo (segundos, minutos, horas, días, semanas, meses, años, décadas, siglos, milenios)
             {1, 60, 3600, 86400, 604800, 2.628e+6, 3.154e+7, 3.154e+8, 3.154e+9, 3.154e+10}, // Tiempo
             // Almacenamiento (byte, kilobytes, megabytes, gigabytes, terabytes, petabytes, exabytes, zettabytes, yottabytes, brontobytes)
-            {1, 0.001, 0.001}, // Almacenamiento
+            {1, 0.001, 0.000001, 0.000000001, 0.000000000001, 0.000000000000001, 0.000000000000000001, 0.000000000000000000001, 0.000000000000000000000001, 0.000000000000000000000000001}, // Almacenamiento
             // Transferencia de datos (bits, kilobits, megabits, gigabits, terabits, petabits, exabits, zettabits, yottabits, brontobits)
-            {1, 0.001}, // Transferencia de datos
+            {1, 0.001, 0.000001, 0.000000001, 0.000000000001, 0.000000000000001, 0.000000000000000001, 0.000000000000000000001, 0.000000000000000000000001, 0.000000000000000000000000001}, // Transferencia de datos
     };
 
     public double convertir(int opcion, int de, int a, double cantidad) {
