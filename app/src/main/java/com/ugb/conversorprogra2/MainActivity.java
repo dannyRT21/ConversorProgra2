@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
                     return; // Detener la ejecución si el campo está vacío
                 }
 
+                // Validación para verificar si el usuario ingresó solo un punto o una coma
+                if (cantidadTexto.equals(".") || cantidadTexto.equals(",")) {
+                    Toast.makeText(MainActivity.this, "Caracter no válido", Toast.LENGTH_SHORT).show();
+                    return; // Detener la ejecución si el campo contiene solo un punto o una coma
+                }
+
                 int opcion = tbh.getCurrentTab(); // Obtener la pestaña actual
                 double cantidad = Double.parseDouble(cantidadTexto);
 
@@ -82,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                     case 2: // Tiempo
                         int deTiempo = ((Spinner) findViewById(R.id.spnATiempo)).getSelectedItemPosition();
                         int aTiempo = ((Spinner) findViewById(R.id.spnDeTiempo)).getSelectedItemPosition();
-
 
                         // Validación para evitar conversiones de la misma unidad
                         if (deTiempo == aTiempo) {
@@ -128,6 +133,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void limpiarCampoRespuesta(View view) {
+        // Limpiar el campo de respuesta (lblRespuesta)
+        TextView lblRespuesta = findViewById(R.id.lblRespuesta);
+        lblRespuesta.setText(""); // Limpia el contenido del campo de respuesta
+
+        // Limpiar el campo de cantidad (txtCantidad)
+        TextView txtCantidad = findViewById(R.id.txtCantidad);
+        txtCantidad.setText(""); // Limpia el contenido del campo de cantidad
+    }
 }
 
 class conversores {
@@ -147,4 +161,5 @@ class conversores {
     public double convertir(int opcion, int de, int a, double cantidad) {
         return (valores[opcion][a] / valores[opcion][de]) * cantidad;
     }
+
 }

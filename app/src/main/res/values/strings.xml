@@ -32,6 +32,8 @@
 
     </string-array>
 
+
+
     <!-- Arrays para tiempo -->
     <string-array name="tiempo">
         <item>Segundos</item>
@@ -62,6 +64,8 @@
         <item>Yottabytes</item>
         <item>Brontobytes</item>
     </string-array>
+
+
 
     <!-- Arrays para transferencia de datos -->
     <string-array name="transferencia_datos">
