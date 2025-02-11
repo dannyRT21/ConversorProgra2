@@ -38,12 +38,14 @@
         <item>Minutos</item>
         <item>Horas</item>
         <item>Días</item>
-        <item>años</item>
-        <item>Siglos</item>
-        <item>Decadas</item>
-        <item>Milenios</item>
-        <item>quinquenio</item>
         <item>semanas</item>
+        <item>Meses</item>
+        <item>años</item>
+        <item>Decadas</item>
+        <item>Siglos</item>
+        <item>Milenios</item>
+
+
 
     </string-array>
 
