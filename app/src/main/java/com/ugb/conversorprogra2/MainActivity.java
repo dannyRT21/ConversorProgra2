@@ -80,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 2: // Tiempo
-                        int deTiempo = ((Spinner) findViewById(R.id.spnDeTiempo)).getSelectedItemPosition();
-                        int aTiempo = ((Spinner) findViewById(R.id.spnATiempo)).getSelectedItemPosition();
+                        int deTiempo = ((Spinner) findViewById(R.id.spnATiempo)).getSelectedItemPosition();
+                        int aTiempo = ((Spinner) findViewById(R.id.spnDeTiempo)).getSelectedItemPosition();
+
 
                         // Validación para evitar conversiones de la misma unidad
                         if (deTiempo == aTiempo) {
@@ -119,9 +120,6 @@ public class MainActivity extends AppCompatActivity {
                         respuesta = objConversores.convertir(opcion, deTransferencia, aTransferencia, cantidad);
                         unidad = ((Spinner) findViewById(R.id.spnATransferencia)).getSelectedItem().toString();
                         break;
-
-
-                    // Repite para Tiempo, Almacenamiento y Transferencia de Datos
                 }
 
                 // Mostrar la respuesta
@@ -138,12 +136,12 @@ class conversores {
             {1, 0.98, 7.73, 25.45, 36.78, 508.87, 8.74, 0.0087, 0.0073, 0.0054, 0.049}, // Monedas
             // Longitud (metros, kilómetros, millas, pies, centímetros, milímetros, yardas, pulgadas, hectáreas, nanómetros)
             {1, 0.001, 0.000621371, 3.28084, 100, 1000, 1.09361, 39.3701, 0.0001, 1e9}, // Longitud
-            // Tiempo (segundos, minutos, horas, dias, semanas, meses, años, decadas, siglos milenios,  )
-            {1.000002, 0.0166667, 0.0166667, 0.04166675, 0.14285742857, 0.23013719436789664696, 0.083333591323550240682, 0.10000019999900001955, 0.1}, // Tiempo
-            // Almacenamiento (byte, kylobites, megabytes, gigabytes, terabytes, petabytes, exabytes, zettabytes, yottabytes, brontobytes,  )
+            // Tiempo (segundos, minutos, horas, días, semanas, meses, años, décadas, siglos, milenios)
+            {1, 60, 3600, 86400, 604800, 2.628e+6, 3.154e+7, 3.154e+8, 3.154e+9, 3.154e+10}, // Tiempo
+            // Almacenamiento (byte, kilobytes, megabytes, gigabytes, terabytes, petabytes, exabytes, zettabytes, yottabytes, brontobytes)
             {1, 0.001, 0.001}, // Almacenamiento
-            // Transferencia de datos (bits, kilobits, megabits, gigabits, terabits, petabits, exabits, zettabits, yottabits, brontobits,  )
-            {1, 0.001,}, // Transferencia de datos
+            // Transferencia de datos (bits, kilobits, megabits, gigabits, terabits, petabits, exabits, zettabits, yottabits, brontobits)
+            {1, 0.001}, // Transferencia de datos
     };
 
     public double convertir(int opcion, int de, int a, double cantidad) {
