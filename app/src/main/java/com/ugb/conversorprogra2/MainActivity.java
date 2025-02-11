@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tbh.addTab(tbh.newTabSpec("Longitud").setContent(R.id.tabLongitud).setIndicator("LONGITUD", null));
         tbh.addTab(tbh.newTabSpec("Tiempo").setContent(R.id.tabTiempo).setIndicator("TIEMPO", null));
         tbh.addTab(tbh.newTabSpec("Almacenamiento").setContent(R.id.tabAlmacenamiento).setIndicator("ALMACENAMIENTO", null));
-        tbh.addTab(tbh.newTabSpec("Transferenciadedatos").setContent(R.id.tabAlmacenamiento).setIndicator("TRANSFERENCIA DE DATOS", null));
+        tbh.addTab(tbh.newTabSpec("Transferenciadedatos").setContent(R.id.tabTransferenciadedatos).setIndicator("TRANSFERENCIA DE DATOS", null));
 
         btn = findViewById(R.id.btnCalcular);
         btn.setOnClickListener(new View.OnClickListener() {

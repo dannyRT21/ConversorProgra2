@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -33,6 +32,7 @@
                 android:layout_height="match_parent"
                 android:padding="16dp">
 
+                <!-- Pestaña de Monedas -->
                 <RelativeLayout
                     android:id="@+id/tabMonedas"
                     android:layout_width="match_parent"
@@ -80,6 +80,7 @@
                         android:background="@color/white" />
                 </RelativeLayout>
 
+                <!-- Pestaña de Longitud -->
                 <RelativeLayout
                     android:id="@+id/tabLongitud"
                     android:layout_width="match_parent"
@@ -127,20 +128,150 @@
                         android:background="@color/white" />
                 </RelativeLayout>
 
+                <!-- Pestaña de Tiempo -->
                 <RelativeLayout
                     android:id="@+id/tabTiempo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        android:id="@+id/lblDeTiempo"
+                        android:text="DE:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnDeTiempo"
+                        android:entries="@array/tiempo"
+                        android:layout_below="@id/lblDeTiempo"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/cardview_light_background" />
+
+                    <TextView
+                        android:id="@+id/lblATiempo"
+                        android:text="A:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/spnDeTiempo"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnATiempo"
+                        android:entries="@array/tiempo"
+                        android:layout_below="@id/lblATiempo"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
+                </RelativeLayout>
+
+                <!-- Pestaña de Almacenamiento -->
                 <RelativeLayout
                     android:id="@+id/tabAlmacenamiento"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        android:id="@+id/lblDeAlmacenamiento"
+                        android:text="DE:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnDeAlmacenamiento"
+                        android:entries="@array/almacenamiento"
+                        android:layout_below="@id/lblDeAlmacenamiento"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/cardview_light_background" />
+
+                    <TextView
+                        android:id="@+id/lblAAlmacenamiento"
+                        android:text="A:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/spnDeAlmacenamiento"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnAAlmacenamiento"
+                        android:entries="@array/almacenamiento"
+                        android:layout_below="@id/lblAAlmacenamiento"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
+                </RelativeLayout>
+
+                <!-- Pestaña de Transferencia de Datos -->
                 <RelativeLayout
                     android:id="@+id/tabTransferenciadedatos"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/lblDeTransferencia"
+                        android:text="DE:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnDeTransferencia"
+                        android:entries="@array/transferencia_datos"
+                        android:layout_below="@id/lblDeTransferencia"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/cardview_light_background" />
+
+                    <TextView
+                        android:id="@+id/lblATransferencia"
+                        android:text="A:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/spnDeTransferencia"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/spnATransferencia"
+                        android:entries="@array/transferencia_datos"
+                        android:layout_below="@id/lblATransferencia"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
+                </RelativeLayout>
+                <!-- Pestaña de Masa -->
                 <RelativeLayout
                     android:id="@+id/Masa"
                     android:layout_width="match_parent"
@@ -150,6 +281,7 @@
         </LinearLayout>
     </TabHost>
 
+    <!-- Campo de entrada para la cantidad -->
     <EditText
         android:id="@+id/txtCantidad"
         android:hint="Ingrese la cantidad"
@@ -165,6 +297,7 @@
         android:textSize="16sp"
         android:inputType="numberDecimal" />
 
+    <!-- Botón de calcular -->
     <Button
         android:id="@+id/btnCalcular"
         android:text="CALCULAR"
@@ -180,6 +313,7 @@
         android:padding="12dp"
         android:fontFamily="sans-serif-medium" />
 
+    <!-- Texto para mostrar la respuesta -->
     <TextView
         android:id="@+id/lblRespuesta"
         android:text="Respuesta: ?"
